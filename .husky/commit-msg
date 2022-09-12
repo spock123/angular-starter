@@ -3,8 +3,6 @@
 
 branch="$(git rev-parse --abbrev-ref HEAD)"
 
-if [ "$branch" = "master" ]; then
+if [ "$branch" = "master" ] || [ "$branch" = "release" ]; then
   npx --no-install commitlint --edit "$1"
 fi
-
-
